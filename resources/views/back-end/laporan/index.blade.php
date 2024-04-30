@@ -17,7 +17,7 @@
             <div class="bg-green-200  dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg ">
                 <div
                     class="pt-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center ">
-                    {{ __('Fokus Kinerja Disdukcapil Tapin Tahun ') }}{{ now()->year }}
+                    {{ __('Fokus Kinerja Disdukcapil Tapin Tahun ') }}{{ $latestYear }}
 
 
                 </div>

@@ -16,18 +16,20 @@ class LaporanController extends Controller
 {
     public function index()
 {
+    $latestYear = Laporan::latest('created_at')->value('created_at')->year;
+    
     // Periksa apakah pengguna adalah admin
     if (Auth::user()->isAdmin()) {
-        // Jika ya, ambil semua laporan dari database
-        $laporans = Laporan::latest()->paginate(5);
+        // Jika ya, ambil semua laporan dari database untuk tahun terbaru
+        $laporans = Laporan::whereYear('created_at', $latestYear)->latest()->get();
     } else {
         // Jika tidak, ambil hanya laporan milik pengguna yang sedang masuk
-        $laporans = Auth::user()->laporans()->latest()->paginate(5);
-        $count = Auth::user()->laporans()->latest()->get();
+        $laporans = Auth::user()->laporans()->whereYear('created_at', $latestYear)->get();
+        $count = Auth::user()->laporans()->whereYear('created_at', $latestYear)->latest()->get();
     }
 
     // Render view dengan laporan yang sesuai
-    return view('back-end.laporan.index', compact('laporans','count'));
+    return view('back-end.laporan.index', compact('laporans', 'count', 'latestYear'));
 }
    
 
@@ -288,7 +290,9 @@ class LaporanController extends Controller
         $dompdf->render();
         
         $dompdf->stream('laporan.pdf', ['Attachment' => false]);
+        
     }
+    
 
 
 

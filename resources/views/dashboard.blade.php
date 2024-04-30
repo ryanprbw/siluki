@@ -7,7 +7,7 @@
 
 
 
-    
+
     <div class="py-12">
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-blue-100  dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -28,20 +28,8 @@
 
         </div>
 
+        @include('back-end.dashboard.partials.table1')
 
-        <div class="relative overflow-x-auto m-8 bg-gray-300 rounded-md">
-            <a href="{{ route('cetak.pdf') }}" target="_blank"
-                class="bg-blue-500 m-8 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
-                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 5v3H5v11h14V8h-5"></path>
-                    <path d="M17 3h4v4"></path>
-                    <path d="M3 17v4h4"></path>
-                </svg>
-                <span>Cetak PDF</span>
-            </a>
-            @include('back-end.dashboard.partials.table1')
-        </div>
 
 
 

@@ -5,24 +5,37 @@ namespace App\Http\Controllers;
 use App\Models\IndikatorKinerja;
 use App\Models\KinerjaUtama;
 use App\Models\Laporan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CatatanController extends Controller
 {
-    public function index()
-{
-    // Ambil semua data laporan tanpa membatasi berdasarkan pengguna
-    $laporans = Laporan::latest()->get();
+//     public function index()
+// {
+//     // Ambil semua data laporan tanpa membatasi berdasarkan pengguna
+//     $laporans = Laporan::latest()->get();
     
-    // Ambil semua data indikator kinerja
-    $indikatorKinerjas = IndikatorKinerja::all();
+//     // Ambil semua data indikator kinerja
+//     $indikatorKinerjas = IndikatorKinerja::all();
     
-    // Ambil semua data kinerja utama
-    $kinerjaUtamas = KinerjaUtama::all();
+//     // Ambil semua data kinerja utama
+//     $kinerjaUtamas = KinerjaUtama::all();
 
-    // Kirim data ke view
-    return view('back-end.catatan.index', compact('laporans', 'indikatorKinerjas', 'kinerjaUtamas'));
+//     // Kirim data ke view
+//     return view('back-end.catatan.index', compact('laporans', 'indikatorKinerjas', 'kinerjaUtamas'));
+// }
+
+public function index()
+{
+    // Ambil tahun terbaru dari koleksi laporans
+    $latestYear = Laporan::max('created_at');
+    $latestYear = Carbon::parse($latestYear)->format('Y');
+
+    // Ambil laporan yang sesuai dengan tahun terbaru
+    $laporans = Laporan::whereYear('created_at', $latestYear)->get();
+
+    return view('back-end.catatan.index', compact('laporans'));
 }
     public function create()
     {

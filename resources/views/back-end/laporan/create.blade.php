@@ -85,11 +85,11 @@
                             </div>
                             <div>
                                 <label for="company"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">%</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Satuan</label>
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" class="form-control @error('persentasi_t1') is-invalid @enderror"
-                                    name="persentasi_t1" value="{{ old('persentasi_t1') }}" placeholder="Masukkan %">
+                                    name="persentasi_t1" value="{{ old('persentasi_t1') }}" placeholder="Masukkan Satuan">
                             </div>
 
                         </div>
@@ -132,11 +132,11 @@
                             </div>
                             <div>
                                 <label for="company"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">%</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Satuan</label>
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" class="form-control @error('persentasi_t2') is-invalid @enderror"
-                                    name="persentasi_t2" value="{{ old('persentasi_t2') }}" placeholder="Masukkan %">
+                                    name="persentasi_t2" value="{{ old('persentasi_t2') }}" placeholder="Masukkan Satuan">
                             </div>
 
                         </div>
@@ -179,11 +179,11 @@
                             </div>
                             <div>
                                 <label for="company"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">%</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Satuan</label>
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" class="form-control @error('persentasi_t3') is-invalid @enderror"
-                                    name="persentasi_t3" value="{{ old('persentasi_t3') }}" placeholder="Masukkan %">
+                                    name="persentasi_t3" value="{{ old('persentasi_t3') }}" placeholder="Masukkan Satuan">
                             </div>
 
                         </div>
@@ -226,11 +226,11 @@
                             </div>
                             <div>
                                 <label for="company"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">%</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Satuan</label>
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" class="form-control @error('persentasi_t4') is-invalid @enderror"
-                                    name="persentasi_t4" value="{{ old('persentasi_t4') }}" placeholder="Masukkan %">
+                                    name="persentasi_t4" value="{{ old('persentasi_t4') }}" placeholder="Masukkan Satuan">
                             </div>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" class="form-control @error('faktor_penghambat_t1') is-invalid @enderror"
-                                    name="faktor_penghambat_t1" value="{{ old('faktor_penghambat_t1') }}" placeholder="Masukkan %">
+                                    name="faktor_penghambat_t1" value="{{ old('faktor_penghambat_t1') }}" placeholder="Masukkan Satuan">
                             </div>
 
                         </div>

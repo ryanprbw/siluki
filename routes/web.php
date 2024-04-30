@@ -28,6 +28,7 @@ Route::get('/', [LandingController::class, 'index'])->name('landing');
 
 Route::middleware('auth')->group(function () {
 
+    
     Route::get('/dashboards', [DashboardController::class, 'index'])->name('dashboards.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

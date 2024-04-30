@@ -115,10 +115,10 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-600">
+                        <tbody class="bg-white divide-y divide-gray-600 ">
                             @foreach ($laporans as $dash)
-                                <tr>
-                                    <td class="px-6 py-4  text-center border border-gray-600">
+                                <tr class="hover:bg-green-300">
+                                    <td class="px-6 py-4  text-center border border-gray-600 ">
                                         {{ $loop->iteration }}</td>
                                     <td class="px-6 py-4  text-center border border-gray-600">
                                         {{ $dash->user->name }}</td>
