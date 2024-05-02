@@ -45,6 +45,13 @@
                     </x-nav-link>
                 </div>
                 @endif
+                @if (Auth::user()->level=='admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('carousels.index')" :active="request()->routeIs('carousels.index')">
+                        {{ __('Carousel') }}
+                    </x-nav-link>
+                </div>
+                @endif
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <button id="theme-toggle" type="button"
                     class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
@@ -119,20 +126,20 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboards.index')" :active="request()->routeIs('laporans.index')">
+            <x-responsive-nav-link :href="route('laporans.index')" :active="request()->routeIs('laporans.index')">
                 {{ __('Laporan') }}
             </x-responsive-nav-link>
         </div>
         @if (Auth::user()->level=='admin')
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboards.index')" :active="request()->routeIs('kinerja.index')">
+            <x-responsive-nav-link :href="route('kinerja.index')" :active="request()->routeIs('kinerja.index')">
                 {{ __('Kinerja') }}
             </x-responsive-nav-link>
         </div>
         @endif
         @if (Auth::user()->level=='admin')
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboards.index')" :active="request()->routeIs('catatans.index')">
+            <x-responsive-nav-link :href="route('catatans.index')" :active="request()->routeIs('catatans.index')">
                 {{ __('Catatan') }}
             </x-responsive-nav-link>
         </div>

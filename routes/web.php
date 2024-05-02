@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CatatanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IndikatorKinerjaController;
@@ -30,11 +31,10 @@ Route::middleware('auth')->group(function () {
 
     
     Route::get('/dashboards', [DashboardController::class, 'index'])->name('dashboards.index');
+    Route::resource('/laporans', \App\Http\Controllers\LaporanController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::resource('/laporans', \App\Http\Controllers\LaporanController::class);
 
 Route::middleware('admin')->group(function () {
     
@@ -52,18 +52,29 @@ Route::middleware('admin')->group(function () {
     Route::delete('kinerja/{id}', [KinerjaUtamaController::class, 'destroy'])->name('kinerja.destroy');
     Route::get('/kinerja/{id}/edit', [KinerjaUtamaController::class, 'edit'])->name('kinerja.edit');
     Route::put('/kinerja/{id}', [KinerjaUtamaController::class, 'update'])->name('kinerja.update');
+
     Route::get('/indikator/create', [IndikatorKinerjaController::class, 'create'])->name('indikator.create');
+    Route::put('/indikator/{id}', [IndikatorKinerjaController::class, 'update'])->name('indikator.update');
     Route::post('/indikator/store', [IndikatorKinerjaController::class, 'store'])->name('indikator.store');
     Route::delete('indikator/{id}', [IndikatorKinerjaController::class, 'destroy'])->name('indikator.destroy');
     Route::get('/indikator/{id}/edit', [IndikatorKinerjaController::class, 'edit'])->name('indikator.edit');
-    Route::put('/indikator/{id}', [IndikatorKinerja::class, 'update'])->name('indikator.update');
-Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-Route::get('/pegawai/create', [PegawaiController::class, 'create'])->name('pegawai.create');
-Route::post('/pegawai', [PegawaiController::class, 'store'])->name('pegawai.store');
-Route::get('/pegawai/{id}', [PegawaiController::class, 'show'])->name('pegawai.show');
-Route::get('/pegawai/{id}/edit', [PegawaiController::class, 'edit'])->name('pegawai.edit');
-Route::put('/pegawai/{id}', [PegawaiController::class, 'update'])->name('pegawai.update');
-Route::delete('/pegawai/{id}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
+
+    Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+    Route::get('/pegawai/{id}/edit', [PegawaiController::class, 'edit'])->name('pegawai.edit');
+    Route::put('/pegawai/{id}', [PegawaiController::class, 'update'])->name('pegawai.update');
+    Route::get('/pegawai/create', [PegawaiController::class, 'create'])->name('pegawai.create');
+    Route::post('/pegawai', [PegawaiController::class, 'store'])->name('pegawai.store');
+    Route::get('/pegawai/{id}', [PegawaiController::class, 'show'])->name('pegawai.show');
+    Route::delete('/pegawai/{id}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
+
+
+    Route::get('/carousels', [CarouselController::class, 'index'])->name('carousels.index');
+    Route::get('/carousels/create', [CarouselController::class, 'create'])->name('carousels.create');
+    Route::post('/carousels', [CarouselController::class, 'store'])->name('carousels.store');
+    Route::get('/carousels/{carousel}/edit', [CarouselController::class, 'edit'])->name('carousels.edit');
+    Route::put('/carousels/{carousel}', [CarouselController::class, 'update'])->name('carousels.update');
+    Route::delete('/carousels/{carousel}', [CarouselController::class, 'destroy'])->name('carousels.destroy');
+
 
     
 });

@@ -13,7 +13,7 @@
             <div class="bg-white  dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div
                     class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center ">
-                    {{ __('Fokus Kinerja Disdukcapil Tapin Tahun 2024') }}
+                    {{ __('CAPAIAN KINERJA DISDUKCAPIL KABUPATEN TAPIN TAHUN 2024') }}
                 </div>
 
 
@@ -32,7 +32,7 @@
                 </a>
 
 
-                <div class="overflow-x-auto flex-nowrap relative">
+                <div class="overflow-x-auto flex-normal relative">
 
                     <table class="table-auto min-w-full divide-y divide-gray-200 border border-gray-200 mb-8">
                         <thead class="bg-green-400">
@@ -124,19 +124,20 @@
                                         {{ $dash->user->name }}</td>
                                     <td class="px-6 py-4  text-center border border-gray-600">
                                         {{ $dash->sasaran }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-6 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->indikator }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-6 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->target }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-6 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->satuan }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->realisasi_ctt_t1 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_pendorong_t1 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                                        {{ $dash->faktor_penghambat_t1 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600"><a
+                                        <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
+                                            {{ $dash->faktor_penghambat_t1 }}
+                                        </td>
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600"><a
                                             href="{{ route('catatans.edit', [$dash->id,1]) }}"
                                             class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"><svg
                                                 class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true"
@@ -146,13 +147,13 @@
                                                     d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z" />
                                             </svg></a> <br>{{ $dash->catatan_kadis_t1 }}</td>
 
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->realisasi_ctt_t2 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_pendorong_t2 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_penghambat_t2 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600"><a
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600"><a
                                         href="{{ route('catatans.edit', [$dash->id,2]) }}"
                                         class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"><svg
                                             class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true"
@@ -162,13 +163,13 @@
                                                 d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z" />
                                         </svg></a> <br>
                                         {{ $dash->catatan_kadis_t2 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->realisasi_ctt_t3 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_pendorong_t3 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_penghambat_t3 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600"><a
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600"><a
                                         href="{{ route('catatans.edit', [$dash->id,3]) }}"
                                         class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"><svg
                                             class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true"
@@ -178,13 +179,13 @@
                                                 d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z" />
                                         </svg></a> <br>
                                         {{ $dash->catatan_kadis_t3 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->realisasi_ctt_t4 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_pendorong_t4 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600">
                                         {{ $dash->faktor_penghambat_t4 }}</td>
-                                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600"><a
+                                    <td class="px-2 py-4 whitespace-normal text-center border border-gray-600"><a
                                         href="{{ route('catatans.edit', [$dash->id,4]) }}"
                                         class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"><svg
                                             class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true"

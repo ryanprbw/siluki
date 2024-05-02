@@ -125,6 +125,7 @@ class LaporanController extends Controller
         $laporan->user_id = Auth::id(); // Menetapkan 'user_id' dari pengguna yang saat ini masuk
         $laporan->save();
 
+        
         //redirect to index
         return redirect()->route('laporans.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }

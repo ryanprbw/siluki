@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pegawai;
+use App\Models\Carousel;
 
 class LandingController extends Controller
 {
@@ -19,7 +20,10 @@ class LandingController extends Controller
             ->latest('triwulan')
             ->first();
 
-        // Kirim data pegawai ASN dan non-ASN ke halaman welcome.blade.php
-        return view('front-end.landing', compact('pegawaiASN', 'pegawaiNonASN'));
+        // Mengambil data carousels
+        $carousels = Carousel::all(); // Ubah sesuai kebutuhan, misalnya Pagination
+
+        // Kirim data pegawai ASN, Non-ASN, dan carousels ke halaman beranda
+        return view('front-end.landing', compact('pegawaiASN', 'pegawaiNonASN', 'carousels'));
     }
 }
