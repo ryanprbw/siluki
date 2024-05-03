@@ -273,16 +273,26 @@ class LaporanController extends Controller
     }
     
     
-    public function cetakPDF()
+    public function cetakPDF(Request $request)
     {
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
         
         $dompdf = new Dompdf($options);
         
-        $laporans = Laporan::all(); // Gantilah ini dengan cara Anda mendapatkan data
+        // Ambil tahun yang dipilih dari dropdown
+        $selectedYear = $request->tahun;
+        $tahun = $request->tahun ?? date('Y');
+        // Memeriksa apakah tahun telah dipilih
+        if ($selectedYear) {
+            // Ambil laporan berdasarkan tahun yang dipilih
+            $laporans = Laporan::whereYear('created_at', $selectedYear)->get();
+        } else {
+            // Jika tahun tidak dipilih, ambil semua laporan
+            $laporans = Laporan::all();
+        }
     
-        $html = view('back-end.laporan.cetak_pdf', compact('laporans'))->render();
+        $html = view('back-end.laporan.cetak_pdf', compact('laporans', 'tahun'))->render();
         
         $dompdf->loadHtml($html);
         
@@ -291,8 +301,8 @@ class LaporanController extends Controller
         $dompdf->render();
         
         $dompdf->stream('laporan.pdf', ['Attachment' => false]);
-        
     }
+    
     
 
 

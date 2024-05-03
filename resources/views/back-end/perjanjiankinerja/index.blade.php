@@ -14,14 +14,14 @@
                         class="mb-4 uppercase text-center text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
                         Tabel Perjanjian Kinerja
                     </div>
-                    <div class="flex justify-end mb-4">
+                    {{-- <div class="flex justify-end mb-4">
                         <select onchange="window.location.href=this.value"
                             class="bg-white border border-gray-300 rounded-md px-4 py-2">
                             <option value="" selected>Pilih Tindakan</option>
                             <option value="{{ route('kinerja.create') }}">Tambah Kinerja Utama</option>
                             <option value="{{ route('indikator.create') }}">Tambah Indikator Kinerja</option>
                         </select>
-                    </div>
+                    </div> --}}
 
 
 

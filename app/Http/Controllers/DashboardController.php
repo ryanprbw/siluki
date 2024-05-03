@@ -12,7 +12,9 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
 {
-    $dashboards = Laporan::latest();
+    $selectedYear = $request->tahun ?? date('Y');
+
+    $dashboards = Laporan::latest()->whereYear('created_at', $selectedYear);
 
     if ($request->has('tahun')) {
         $dashboards->whereYear('created_at', $request->tahun);

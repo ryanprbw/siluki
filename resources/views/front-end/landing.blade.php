@@ -182,11 +182,6 @@
 </footer>
 
 
-
-
-
-
-
 </html>
 
 @include('layouts.javasc')

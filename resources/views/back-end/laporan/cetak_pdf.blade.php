@@ -7,17 +7,17 @@
     <title>Laporan PDF</title>
     <style>
         table {
-            width: 100%;
+            width: 10%;
             border-collapse: collapse;
             font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-size: 11px;
         }
 
         .table2 {
             width: 10%;
             border-collapse: collapse;
             font-family: Arial, sans-serif;
-            font-size: 12px;
+            font-size: 9px;
             
         }
 
@@ -46,7 +46,8 @@
 </head>
 
 <body>
-    <h1 class="center" style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun 2024 Kabupaten Tapin</h1>
+    <h1 class="center" style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
+
     <table class="overflow-x-auto">
         <thead class="bg-gray-50">
             <tr>
@@ -81,25 +82,25 @@
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Realisasi</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    %</th>
+                    Satuan</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Target</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Realisasi</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    %</th>
+                    Satuan</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Target</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Realisasi</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    %</th>
+                    Satuan</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Target</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
                     Realisasi</th>
                 <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    %</th>
+                    Satuan</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-600">
@@ -145,7 +146,7 @@
     </table>
 
     <div class="overflow-x-auto">
-        <h1 class="center pagebreak " style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun 2024 Kabupaten Tapin</h1>
+        <h1 class="center pagebreak " style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
     <table class="overflow-x-auto table2">
         <thead class="bg-gray-50">
                 <tr>
