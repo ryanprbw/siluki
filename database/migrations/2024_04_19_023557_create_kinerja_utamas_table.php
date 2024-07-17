@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('kinerja_utamas', function (Blueprint $table) {
             $table->id();
             $table->string('kinerja_utama');
-            $table->target('target');
-            $table->realisasi('realisasi');
+            // $table->target('target');
+            // $table->realisasi('realisasi');
             $table->timestamps();
         });
     }

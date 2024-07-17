@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('laporans', function (Blueprint $table) {
-            //
+            $table->bigInteger('user_id')->unsigned()->nullable(false);
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('laporans', function (Blueprint $table) {
-            //
+            $table->dropColumn('user_id');
         });
     }
 };

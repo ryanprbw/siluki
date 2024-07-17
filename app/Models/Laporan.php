@@ -44,15 +44,15 @@ class Laporan extends Model
         'faktor_pendorong_t4',
         'faktor_penghambat_t4',
         'catatan_kadis_t4',
-       
-        
         'updated_at',
         'created_at'
     ];
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
+public function user()
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+
 
 
 

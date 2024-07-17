@@ -7,18 +7,17 @@
     <title>Laporan PDF</title>
     <style>
         table {
-            width: 10%;
+            width: 100%;
             border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-        }
-
-        .table2 {
-            width: 10%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            font-size: 9px;
+            font-family: Helvetica, sans-serif;
+            font-size: 8px;
             
+        }
+        h2 {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-style: bold;
         }
 
         th,
@@ -33,237 +32,138 @@
         }
 
         .center {
-            text-align: center; 
+            text-align: center;
             font-family: Arial, sans-serif;
-            
         }
+
         .pagebreak {
-            text-align: center; 
-            font-family: Arial, sans-serif;
             page-break-before: always;
         }
     </style>
 </head>
 
+@foreach ($laporansByBidang as $bidang => $laporans)
 <body>
-    <h1 class="center" style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
-
-    <table class="overflow-x-auto">
-        <thead class="bg-gray-50">
-            <tr>
-                <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600 "
-                    rowspan="2">No.</th>
-                {{-- <th class="px-4 py-2 text-sm font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">Dibuat oleh:</th> --}}
-                <th
-                    class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                    Sasaran Kinerja</th>
-                <th
-                    class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                    Indikator</th>
-                <th
-                    class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                    Target</th>
-                <th
-                    class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                    Satuan</th>
-                <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                    colspan="3">Triwulan 1</th>
-                <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                    colspan="3">Triwulan 2</th>
-                <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                    colspan="3">Triwulan 3</th>
-                <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                    colspan="3">Triwulan 4</th>
-            </tr>
-            <tr>
-
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Target</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Realisasi</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Satuan</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Target</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Realisasi</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Satuan</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Target</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Realisasi</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Satuan</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Target</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Realisasi</th>
-                <th class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                    Satuan</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-600">
-            @foreach ($laporans as $dash)
+    <h1 class="center">Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
+        <h2>Bidang: {{ $bidang }}</h2>
+        <table>
+            <thead>
                 <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $loop->iteration }}
-                    </td>
-                    {{-- <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->user->name }}</td> --}}
-                    <td class="px-6 py-4 whitespace-nowrap text-center border uppercase font-sans border-gray-600">
-                        {{ $dash->sasaran }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->indikator }}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->satuan }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target_t1 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->realisasi_t1 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->persentasi_t1 }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target_t2 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->realisasi_t2 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->persentasi_t2 }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target_t3 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->realisasi_t3 }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->persentasi_t3 }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target_t4 }}
-                    </td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->realisasi_t4 }}</td>
-                    <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                        {{ $dash->persentasi_t4 }}</td>
-                </tr>
-                <!-- Tambahkan baris tambahan sesuai kebutuhan -->
-            @endforeach
-        </tbody>
-    </table>
-
-    <div class="overflow-x-auto">
-        <h1 class="center pagebreak " style="text-center center">Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
-    <table class="overflow-x-auto table2">
-        <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                        rowspan="2">No.</th>
-                    {{-- <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">Dibuat oleh:</th> --}}
-                    <th
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                        Sasaran Kinerja</th>
-                    <th
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                        Indikator</th>
-                    <th
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                        Target</th>
-                    <th
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"rowspan="2">
-                        Satuan</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                        colspan="3">Triwulan 1</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                        colspan="3">Triwulan 2</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                        colspan="3">Triwulan 3</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600"
-                        colspan="3">Triwulan 4</th>
+                    <th rowspan="2">No.</th>
+                    <th rowspan="2">Sasaran Kinerja</th>
+                    <th rowspan="2">Indikator</th>
+                    <th rowspan="2">Target</th>
+                    <th rowspan="2">Satuan</th>
+                    <th colspan="3">Triwulan 1</th>
+                    <th colspan="3">Triwulan 2</th>
+                    <th colspan="3">Triwulan 3</th>
+                    <th colspan="3">Triwulan 4</th>
+                    <th rowspan="2">Jabatan</th>
                 </tr>
                 <tr>
-
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Realisasi</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Pendorong</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Penghambat</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Realisasi</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Pendorong</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Penghambat</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Realisasi</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Pendorong</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Penghambat</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Realisasi</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Pendorong</th>
-                    <th
-                        class="px-2 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border border-gray-600">
-                        Faktor Penghambat</th>
+                    <th>Target</th>
+                    <th>Realisasi</th>
+                    <th>Satuan</th>
+                    <th>Target</th>
+                    <th>Realisasi</th>
+                    <th>Satuan</th>
+                    <th>Target</th>
+                    <th>Realisasi</th>
+                    <th>Satuan</th>
+                    <th>Target</th>
+                    <th>Realisasi</th>
+                    <th>Satuan</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-600">
-                @forelse ($laporans as $dash)
+            <tbody>
+                @foreach ($laporans as $dash)
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $loop->iteration }}</td>
-                        {{-- <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->user->name }}</td> --}}
-                        <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->sasaran }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->indikator }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->target }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center border border-gray-600">{{ $dash->satuan }}
-                        </td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->realisasi_ctt_t1 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_pendorong_t1 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_penghambat_t1 }}</td>
-
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->realisasi_ctt_t2 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_pendorong_t2 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_penghambat_t2 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->realisasi_ctt_t3 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_pendorong_t3 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_penghambat_t3 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->realisasi_ctt_t4 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_pendorong_t4 }}</td>
-                        <td class="px-2 py-4 whitespace-nowrap text-center border border-gray-600">
-                            {{ $dash->faktor_penghambat_t4 }}</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td class="uppercase">{{ $dash->sasaran }}</td>
+                        <td>{{ $dash->indikator }}</td>
+                        <td>{{ $dash->target }}</td>
+                        <td>{{ $dash->satuan }}</td>
+                        <td>{{ $dash->target_t1 }}</td>
+                        <td>{{ $dash->realisasi_t1 }}</td>
+                        <td>{{ $dash->persentasi_t1 }}</td>
+                        <td>{{ $dash->target_t2 }}</td>
+                        <td>{{ $dash->realisasi_t2 }}</td>
+                        <td>{{ $dash->persentasi_t2 }}</td>
+                        <td>{{ $dash->target_t3 }}</td>
+                        <td>{{ $dash->realisasi_t3 }}</td>
+                        <td>{{ $dash->persentasi_t3 }}</td>
+                        <td>{{ $dash->target_t4 }}</td>
+                        <td>{{ $dash->realisasi_t4 }}</td>
+                        <td>{{ $dash->persentasi_t4 }}</td>
+                        <td>{{ $dash->user->jabatan }}</td>
                     </tr>
-                    <!-- Tambahkan baris tambahan sesuai kebutuhan -->
-                @empty
-                    <div class="bg-gray-100 border border-gray-300 rounded-lg p-8">
-                        <p class="text-gray-600 text-lg font-semibold">Data masih Kosong</p>
-                    </div>
-                @endforelse
+                @endforeach
             </tbody>
         </table>
+   
 
-    </div>
+    <div class="pagebreak"></div>
+    <h1 class="center">Catatan Laporan Rekap Sasaran Perangkat Daerah Tahun {{ $tahun }} Kabupaten Tapin</h1>
+    <h2>Bidang: {{ $bidang }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No.</th>
+                <th rowspan="2">Sasaran Kinerja</th>
+                <th rowspan="2">Indikator</th>
+                <th rowspan="2">Target</th>
+                <th rowspan="2">Satuan</th>
+                <th colspan="3">Triwulan 1</th>
+                <th colspan="3">Triwulan 2</th>
+                <th colspan="3">Triwulan 3</th>
+                <th colspan="3">Triwulan 4</th>
+                <th rowspan="2">Jabatan</th>
+            </tr>
+            <tr>
+                <th>Realisasi</th>
+                <th>Faktor Pendorong</th>
+                <th>Faktor Penghambat</th>
+                <th>Realisasi</th>
+                <th>Faktor Pendorong</th>
+                <th>Faktor Penghambat</th>
+                <th>Realisasi</th>
+                <th>Faktor Pendorong</th>
+                <th>Faktor Penghambat</th>
+                <th>Realisasi</th>
+                <th>Faktor Pendorong</th>
+                <th>Faktor Penghambat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($laporans as $dash)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $dash->sasaran }}</td>
+                    <td>{{ $dash->indikator }}</td>
+                    <td>{{ $dash->target }}</td>
+                    <td>{{ $dash->satuan }}</td>
+                    <td>{{ $dash->realisasi_ctt_t1 }}</td>
+                    <td>{{ $dash->faktor_pendorong_t1 }}</td>
+                    <td>{{ $dash->faktor_penghambat_t1 }}</td>
+                    <td>{{ $dash->realisasi_ctt_t2 }}</td>
+                    <td>{{ $dash->faktor_pendorong_t2 }}</td>
+                    <td>{{ $dash->faktor_penghambat_t2 }}</td>
+                    <td>{{ $dash->realisasi_ctt_t3 }}</td>
+                    <td>{{ $dash->faktor_pendorong_t3 }}</td>
+                    <td>{{ $dash->faktor_penghambat_t3 }}</td>
+                    <td>{{ $dash->realisasi_ctt_t4 }}</td>
+                    <td>{{ $dash->faktor_pendorong_t4 }}</td>
+                    <td>{{ $dash->faktor_penghambat_t4 }}</td>
+                    <td>{{ $dash->user->jabatan }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="18" class="text-center">Data masih Kosong</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
 </body>
+@endforeach
 
 </html>

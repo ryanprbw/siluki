@@ -280,28 +280,40 @@ class LaporanController extends Controller
         
         $dompdf = new Dompdf($options);
         
-        // Ambil tahun yang dipilih dari dropdown
+        // Ambil tahun yang dipilih dari dropdown atau default ke tahun saat ini
         $selectedYear = $request->tahun;
-        $tahun = $request->tahun ?? date('Y');
+        $tahun = $selectedYear ?? date('Y');
+        
         // Memeriksa apakah tahun telah dipilih
         if ($selectedYear) {
             // Ambil laporan berdasarkan tahun yang dipilih
-            $laporans = Laporan::whereYear('created_at', $selectedYear)->get();
+            $laporans = Laporan::with('user')->whereYear('created_at', $selectedYear)->get();
         } else {
             // Jika tahun tidak dipilih, ambil semua laporan
-            $laporans = Laporan::all();
+            $laporans = Laporan::with('user')->get();
         }
-    
-        $html = view('back-end.laporan.cetak_pdf', compact('laporans', 'tahun'))->render();
         
+        // Mengelompokkan laporan berdasarkan bidang dari tabel users
+        $laporansByBidang = $laporans->groupBy(function ($laporan) {
+            return $laporan->user->bidang;
+        });
+
+        // Render view laporan dengan data yang diperlukan
+        $html = view('back-end.laporan.cetak_pdf', compact('laporansByBidang', 'tahun'))->render();
+        
+        // Load HTML ke Dompdf
         $dompdf->loadHtml($html);
         
-        $dompdf->setPaper('Legal', 'landscape');
-        
+        // Set ukuran kertas dan orientasi
+        $dompdf->setPaper(array(0, 0, 612, 936), 'landscape'); // Ukuran F4 dalam mode landscape
+
+        // Render PDF (generate)
         $dompdf->render();
         
+        // Stream PDF untuk ditampilkan atau didownload
         $dompdf->stream('laporan.pdf', ['Attachment' => false]);
     }
+    
     
     
 
