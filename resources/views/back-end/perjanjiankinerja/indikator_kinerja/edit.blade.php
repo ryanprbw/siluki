@@ -13,14 +13,14 @@
                     @method('PUT')
 
                     <!-- Dropdown untuk memilih kinerja utama -->
-                    <label for="sasaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kinerja
+                    <label for="kinerja_utama_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kinerja
                         Utama</label>
-                    <select name="sasaran" class="form-control @error('sasaran') is-invalid @enderror">
+                    <select name="kinerja_utama_id" class="form-control @error('kinerja_utama_id') is-invalid @enderror">
                         @foreach ($kinerjaUtamas as $kinerjaUtama)
                             <option value="{{ $kinerjaUtama->id }}">{{ $kinerjaUtama->kinerja_utama }}</option>
                         @endforeach
                     </select>
-                    @error('sasaran')
+                    @error('kinerja_utama_id')
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
                             {{ $message }}
                         </div>

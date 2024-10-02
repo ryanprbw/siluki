@@ -111,7 +111,7 @@ public function update(Request $request, $id)
         
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('indikator.index')
+        return redirect()->route('kinerja.index')
             ->with('success', 'Data kinerja berhasil diperbarui.');
     } catch (ValidationException $e) {
         // Jika validasi gagal, kembali ke halaman sebelumnya dengan pesan kesalahan

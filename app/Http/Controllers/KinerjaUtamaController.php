@@ -8,10 +8,10 @@ use App\Models\KinerjaUtama;
 class KinerjaUtamaController extends Controller
 {
     public function index()
-    {
-        $kinerjaUtamas = KinerjaUtama::all();
-        return view('back-end.perjanjiankinerja.index', compact('kinerjaUtamas'));
-    }
+{
+    $kinerjaUtamas = KinerjaUtama::paginate(10); // Contoh untuk membatasi 10 data per halaman
+    return view('back-end.perjanjiankinerja.index', compact('kinerjaUtamas'));
+}
 
     public function create()
     {
@@ -31,7 +31,7 @@ class KinerjaUtamaController extends Controller
 
     public function edit($id)
     {
-        $kinerjaUtama = KinerjaUtama::find($id);
+        $kinerjaUtama = KinerjaUtama::findOrFail($id);
         return view('back-end.perjanjiankinerja.edit', compact('kinerjaUtama'));
     }
 
@@ -46,14 +46,13 @@ class KinerjaUtamaController extends Controller
         return redirect()->route('kinerja.index')->with('success', 'Kinerja utama berhasil diperbarui.');
     }
 
-    public function destroy($id)
-    {
-        try {
-            $kinerjaUtama = KinerjaUtama::findOrFail($id);
-            $kinerjaUtama->delete();
-            return redirect()->route('kinerja.index')->with('success', 'Kinerja Utama berhasil dihapus.');
-        } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan saat menghapus kinerja utama: ' . $e->getMessage());
-        }
+    public function destroy(KinerjaUtama $kinerjaUtama)
+{
+    try {
+        $kinerjaUtama->delete();
+        return redirect()->route('kinerja.index')->with('success', 'Kinerja Utama berhasil dihapus.');
+    } catch (\Exception $e) {
+        return back()->with('error', 'Terjadi kesalahan saat menghapus kinerja utama: ' . $e->getMessage());
     }
+}
 }
