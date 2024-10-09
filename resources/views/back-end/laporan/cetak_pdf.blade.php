@@ -128,23 +128,23 @@
                     <th rowspan="2">Indikator</th>
                     <th rowspan="2">Target</th>
                     <th rowspan="2">Satuan</th>
-                    <th colspan="3">Triwulan 1</th>
-                    <th colspan="3">Triwulan 2</th>
-                    <th colspan="3">Triwulan 3</th>
-                    <th colspan="3">Triwulan 4</th>
+                    <th colspan="2">Triwulan 1</th>
+                    <th colspan="2">Triwulan 2</th>
+                    <th colspan="2">Triwulan 3</th>
+                    <th colspan="2">Triwulan 4</th>
                     <th rowspan="2">Jabatan</th>
                 </tr>
                 <tr>
-                    <th>Realisasi</th>
+                    
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    <th>Realisasi</th>
+                    
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    <th>Realisasi</th>
+                    
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    <th>Realisasi</th>
+                    
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
                 </tr>
@@ -157,16 +157,16 @@
                         <td class="realisasi">{{ $dash->indikator }}</td>
                         <td>{{ $dash->target }}</td>
                         <td>{{ $dash->satuan }}</td>
-                        <td class="realisasi">{{ $dash->realisasi_ctt_t1 }}</td>
+                        
                         <td>{{ $dash->faktor_pendorong_t1 }}</td>
                         <td>{{ $dash->faktor_penghambat_t1 }}</td>
-                        <td class="realisasi">{{ $dash->realisasi_ctt_t2 }}</td>
+                        
                         <td>{{ $dash->faktor_pendorong_t2 }}</td>
                         <td>{{ $dash->faktor_penghambat_t2 }}</td>
-                        <td class="realisasi">{{ $dash->realisasi_ctt_t3 }}</td>
+                       
                         <td>{{ $dash->faktor_pendorong_t3 }}</td>
                         <td>{{ $dash->faktor_penghambat_t3 }}</td>
-                        <td class="realisasi">{{ $dash->realisasi_ctt_t4 }}</td>
+                        
                         <td>{{ $dash->faktor_pendorong_t4 }}</td>
                         <td>{{ $dash->faktor_penghambat_t4 }}</td>
                         <td>{{ $dash->user->jabatan }}</td>

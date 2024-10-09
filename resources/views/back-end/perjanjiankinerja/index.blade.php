@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2
             class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-2xl dark:text-white animate-pulse">
-            {{ __('Perjanjian Kinerja') }}
+            {{ __('Perjanjian Kinerja ') }}
         </h2>
     </x-slot>
 
