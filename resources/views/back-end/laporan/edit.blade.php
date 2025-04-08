@@ -134,9 +134,10 @@
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                         Catatan Realisasi Triwulan I
                                     </label>
-                                    <textarea id="message" rows="4"
+                                    <textarea name="realisasi_ctt_t1" id="realisasi_ctt_t1" rows="4"
                                         class="w-full p-3 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="Masukan Catatan Realisasi Triwulan I">{{ old('realisasi_ctt_t1', $laporan->realisasi_ctt_t1) }}</textarea>
+                                        placeholder="Masukkan Catatan Realisasi Triwulan I">{{ old('realisasi_ctt_t1', $laporan->realisasi_ctt_t1) }}</textarea>
+
 
                                 </div>
 
@@ -421,9 +422,9 @@
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                         Catatan Realisasi Triwulan IV
                                     </label>
-                                    <textarea id="realisasi_ctt_t4" rows="4"
+                                    <textarea name="realisasi_ctt_t4" id="realisasi_ctt_t4" rows="4"
                                         class="w-full p-3 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                                        name="realisasi_ctt_t4" placeholder="Masukkan Catatan Realisasi Triwulan IV">{{ old('realisasi_ctt_t4', $laporan->realisasi_ctt_t4) }}</textarea>
+                                        placeholder="Masukkan Catatan Realisasi Triwulan IV">{{ old('realisasi_ctt_t4', $laporan->realisasi_ctt_t4) }}</textarea>
 
                                 </div>
 
@@ -459,13 +460,13 @@
                         <div class="m-8 py-8">
                             <a href="{{ url()->previous() }}"
                                 class="btn btn-md text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Kembali</a>
-            
+
                             <button type="reset"
                                 class="btn btn-md btn-warning text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</button>
-            
+
                             <button type="submit"
                                 class="btn btn-md text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
-        
+
                         </div>
                     </div>
                 </section>
