@@ -9,7 +9,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-family: Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 8px;
 
         }
@@ -24,7 +24,7 @@
         th,
         td {
             border: 1px solid #000;
-            padding: 8px;
+            padding: 2px;
             text-align: center;
 
         }
@@ -135,16 +135,16 @@
                     <th rowspan="2">Jabatan</th>
                 </tr>
                 <tr>
-                    
+
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    
+
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    
+
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
-                    
+
                     <th>Faktor Pendorong</th>
                     <th>Faktor Penghambat</th>
                 </tr>
@@ -157,16 +157,16 @@
                         <td class="realisasi">{{ $dash->indikator }}</td>
                         <td>{{ $dash->target }}</td>
                         <td>{{ $dash->satuan }}</td>
-                        
+
                         <td>{{ $dash->faktor_pendorong_t1 }}</td>
                         <td>{{ $dash->faktor_penghambat_t1 }}</td>
-                        
+
                         <td>{{ $dash->faktor_pendorong_t2 }}</td>
                         <td>{{ $dash->faktor_penghambat_t2 }}</td>
-                       
+
                         <td>{{ $dash->faktor_pendorong_t3 }}</td>
                         <td>{{ $dash->faktor_penghambat_t3 }}</td>
-                        
+
                         <td>{{ $dash->faktor_pendorong_t4 }}</td>
                         <td>{{ $dash->faktor_penghambat_t4 }}</td>
                         <td>{{ $dash->user->jabatan }}</td>

@@ -48,8 +48,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Laporan::class);
     }
+
     public function isAdmin()
-{
-    return $this->role === 'admin';
-}
+    {
+        return $this->roles === 'admin' || $this->level === 'admin';
+    }
+
 }

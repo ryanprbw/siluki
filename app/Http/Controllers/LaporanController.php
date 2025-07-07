@@ -16,21 +16,40 @@ class LaporanController extends Controller
 {
     public function index()
     {
-        $latestYear = Laporan::latest('created_at')->value('created_at')->year;
+        $latestCreatedAt = Laporan::latest('created_at')->value('created_at');
+        $latestYear = $latestCreatedAt ? $latestCreatedAt->year : now()->year;
 
-        // Periksa apakah pengguna adalah admin
-        if (Auth::user()->isAdmin()) {
-            // Jika ya, ambil semua laporan dari database untuk tahun terbaru
-            $laporans = Laporan::whereYear('created_at', $latestYear)->latest()->get();
+        // Debugging untuk latestYear
+        // Periksa nilai latestYear
+
+        // Ambil laporan sesuai dengan tahun terbaru
+        if (Auth::check() && Auth::user()->isAdmin()) {
+            $laporans = Laporan::where('user_id', Auth::id()) // Memfilter laporan hanya untuk user yang login
+                ->whereYear('created_at', $latestYear)
+                ->latest()
+                ->get();
+
         } else {
-            // Jika tidak, ambil hanya laporan milik pengguna yang sedang masuk
-            $laporans = Auth::user()->laporans()->whereYear('created_at', $latestYear)->get();
-            $count = Auth::user()->laporans()->whereYear('created_at', $latestYear)->latest()->get();
+            // Filter laporan berdasarkan user yang login
+            $laporans = Laporan::where('user_id', Auth::id())  // Filter laporan berdasarkan user_id
+                ->whereYear('created_at', $latestYear)
+                ->latest()
+                ->get();
         }
 
-        // Render view dengan laporan yang sesuai
+        // Pastikan $laporans adalah koleksi, bahkan jika kosong
+        $laporans = $laporans ?: collect(); // Jika $laporans null, set menjadi koleksi kosong
+
+        // Hitung jumlah laporan
+        $count = $laporans->count();
+
         return view('back-end.laporan.index', compact('laporans', 'count', 'latestYear'));
     }
+
+
+
+
+
 
 
     public function create()
@@ -262,15 +281,15 @@ class LaporanController extends Controller
     }
     public function destroy(Laporan $laporan)
     {
-        //delete image
-        Storage::delete('public/posts/' . $laporan->image);
+        if ($laporan->image) {
+            Storage::delete('public/laporans/' . $laporan->image); // sesuaikan folder
+        }
 
-        //delete post
         $laporan->delete();
 
-        //redirect to index
         return redirect()->route('laporans.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
+
 
 
     public function cetakPDF(Request $request)
